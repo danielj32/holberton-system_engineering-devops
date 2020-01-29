@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo ln -s /bin/ls /root/__ls__
+sudo ln -s /bin/ls /home/root/__ls__
