@@ -1,2 +1,2 @@
 #!/bin/bash
-ls | grep -v "[A-Z]" /tmp/u/
+mv | grep -v "[A-Z]" /tmp/u/
