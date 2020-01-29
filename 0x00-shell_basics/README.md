@@ -1,0 +1,1 @@
+This directory contents examples about the basics commands of the shell
