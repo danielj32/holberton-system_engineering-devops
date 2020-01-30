@@ -1,18 +1,18 @@
 .TH man 2 "04 May 2015" "1.0" "holberton man page"
 .SH NAME
 .B holberton
-- become a full=stack software engineer. 
+- become a full-stack software engineer. 
 .SH SYNOPSIS
-nuseradd [USERNAME]
+holberton [STUDENTNAME]
 .SH DESCRIPTION
-.B Holberton
-does not take any options. However, you can supply studentname.
+Holberton does not take any options. However, you can supply studentname.
 .SH OPTIONS
-The nuseradd does not take any options. However, you can supply username.
+.BHolberton
+does bot take any options. however, you can supply studentname.
 .SH SEE ALSO
 .I peerlearning(2), projectbased(2), fullstack(2), Betty(1)
 .SH BUGS
 No known bugs.
 .SH AUTHOR
-Julien Barber,Sylvain Kalache, Sophie Barbier, Guillaume Salva, Kris Bredemier, Julien Cyr, Alex Gautier and all the Holberton
-mentors
+Julien Barber,Sylvain Kalache, Sophie Barbier, Guillaume Salva, Kris Bredemier, Julien Cyr, Alex Gautier and all the Holberton 
+ mentors
