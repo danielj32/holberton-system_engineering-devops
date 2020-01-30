@@ -1,0 +1,1 @@
+This file contents infomation about the permmission in linux
