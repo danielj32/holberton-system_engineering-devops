@@ -1,0 +1,1 @@
+THis directory contents information about the commands of the shell for the linux terminal.
