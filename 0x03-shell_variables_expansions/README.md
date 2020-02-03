@@ -1,0 +1,1 @@
+This directory contens information about the init files, variables and expansionsx
