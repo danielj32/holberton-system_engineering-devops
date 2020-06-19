@@ -1,0 +1,1 @@
+This directory is about  Loops, conditions and parsing in the bash
