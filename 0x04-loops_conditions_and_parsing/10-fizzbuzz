@@ -6,12 +6,12 @@ do
 	if [ $((x % 5)) == 0 -a $((x % 3)) == 0 ]
     then
 		echo "FizzBuzz"
-	elif [ $((x % 3)) == 0 ]
-    then
-	echo "Fizz"
 	elif [ $((x % 5)) == 0 ]
     then
-	echo "Buzz"
+		echo "Buzz"
+	elif [ $((x % 3)) == 0 ]
+    then
+		echo "Fizz"
 	else
 		echo $x
 	fi
