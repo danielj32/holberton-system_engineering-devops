@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Fizz Buzz
 x=1
-while [ $x -le 102 ]
+while [ $x -lt 101 ]
 do
 	if [ $((x % 5)) == 0 -a $((x % 3)) == 0 ]
     then
