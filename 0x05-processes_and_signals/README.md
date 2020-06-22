@@ -1,0 +1,1 @@
+This directory is about Processes and signals in Linux bash shellscript.
