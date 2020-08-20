@@ -1,0 +1,1 @@
+This directory contents information about HTTPS SSL
