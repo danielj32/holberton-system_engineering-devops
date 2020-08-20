@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# bug at ngnix
+sudo service nginx restart
+sudo ln -s -f /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo sed -i "s/8080/80/" /etc/nginx/sites-available/default
+sudo service nginx restart
+

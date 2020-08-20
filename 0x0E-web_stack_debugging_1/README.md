@@ -1,0 +1,1 @@
+This directory contens information about Web stack debugging
