@@ -3,20 +3,27 @@
 import requests
 from sys import argv
 
-url = 'https://jsonplaceholder.typicode.com/users/{}'.format(argv[1])
-req = requests.get(url).json()
-EMPLOYEE_NAME = req.get('name')
-url_2 = 'https://jsonplaceholder.typicode.com/todos?userId={}'\
-        .format(argv[1])
-reqt = requests.get(url_2).json()
-TASK_TITLE = []
-NUMBER_OF_DONE_TASKS = 0
-for ct in reqt:
-    if ct.get("completed") is True:
-        TASK_TITLE.append(ct.get("title"))
-        NUMBER_OF_DONE_TASKS += 1
-        TOTAL_NUMBER_OF_TASKS = len(reqt)
-        print("employee {} is done with tasks({}/{}):".format
-              (EMPLOYEE_NAME, NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS))
-        for ct2 in TASK_TITLE:
-            print("\t {}".format(ct2))
+users = requests.get(
+        "https://jsonplaceholder.typicode.com/users?id=" + argv[1])
+todos = requests.get(
+    "https://jsonplaceholder.typicode.com/todos?userId=" + argv[1])
+
+users_json = users.json()
+todos_json = todos.json()
+done_tasks = 0
+total_tasks = 0
+task_list = []
+
+for data in todos_json:
+    if data['completed'] is True:
+        done_tasks += 1
+        task_list.append(data['title'])
+        total_tasks += 1
+
+employee_name = users_json[0]['name']
+
+print("Employee {} is done with tasks({}/{}):".
+      format(employee_name, done_tasks, total_tasks))
+
+for task in task_list:
+    print('\t ' + task)
