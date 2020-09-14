@@ -3,27 +3,29 @@
 import requests
 from sys import argv
 
-users = requests.get(
-        "https://jsonplaceholder.typicode.com/users?id=" + argv[1])
-todos = requests.get(
-    "https://jsonplaceholder.typicode.com/todos?userId=" + argv[1])
+try:
+    int(argv[1])
+    id_user = argv[1]
+    user_data = requests.get(
+        'https://jsonplaceholder.typicode.com/users/{}'.format(id_user))
+    user_tasks = requests.get(
+        'https://jsonplaceholder.typicode.com/todos',
+        params={
+            'userId': id_user})
 
-users_json = users.json()
-todos_json = todos.json()
-done_tasks = 0
-total_tasks = 0
-task_list = []
+    username = user_data.json()['name']
+    user_tasks_json = user_tasks.json()
 
-for data in todos_json:
-    if data['completed'] is True:
-        done_tasks += 1
-        task_list.append(data['title'])
-        total_tasks += 1
+    tasks_completed = []
+    total_tasks = len(user_tasks_json)
+    for task in user_tasks_json:
+        if task['completed']:
+            tasks_completed.append(task['title'])
 
-employee_name = users_json[0]['name']
-
-print("Employee {} is done with tasks({}/{}):".
-      format(employee_name, done_tasks, total_tasks))
-
-for task in task_list:
-    print('\t ' + task)
+    print('Employee {} is done with tasks({}/{}):'.format(username,
+                                                          len(tasks_completed),
+                                                          total_tasks))
+    for task in tasks_completed:
+        print('\t {}'.format(task))
+except Exception:
+    print('Not a valid argument')
