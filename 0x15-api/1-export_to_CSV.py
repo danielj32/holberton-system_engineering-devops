@@ -5,7 +5,7 @@ from sys import argv
 import csv
 
 
-def record(input):
+def record_tasks(input):
     """record of task """
     user = get('https://jsonplaceholder.typicode.com/users/' + input).json()
     if not user:
