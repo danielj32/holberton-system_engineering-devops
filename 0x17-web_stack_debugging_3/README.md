@@ -1,0 +1,1 @@
+this directory contents information about web stack
