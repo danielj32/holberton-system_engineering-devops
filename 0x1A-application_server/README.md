@@ -1,0 +1,1 @@
+This directoy contents information about the Application server 
